@@ -3,12 +3,13 @@ LLVMBASE:=$(shell brew --prefix llvm)
 GCCBASE:=$(shell brew --prefix gcc)
 GETTEXT:=$(shell brew --prefix gettext)
 
-CC=$(LLVMBASE)/bin/clang -fopenmp
-CXX=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX11=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX14=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX17=$(LLVMBASE)/bin/clang++ -fopenmp
-CXX1X=$(LLVMBASE)/bin/clang++ -fopenmp
+     CC=/usr/local/clang4/bin/clang
+     CXX=/usr/local/clang4/bin/clang++
+     CXX11=/usr/local/clang4/bin/clang++
+     CXX14=/usr/local/clang4/bin/clang++
+     CXX17=/usr/local/clang4/bin/clang++
+     CXX1X=/usr/local/clang4/bin/clang++
+     LDFLAGS=-L/usr/local/clang4/lib
 
 CPPFLAGS=-isystem "$(LLVMBASE)/include" -isysroot "$(XCBASE)"
 LDFLAGS=-L"$(LLVMBASE)/lib" -L"$(GETTEXT)/lib" --sysroot="$(XCBASE)"
